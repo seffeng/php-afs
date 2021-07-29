@@ -1,0 +1,32 @@
+{
+    "name": "seffeng/afs",
+    "description": "PHP extension afs",
+    "keywords": ["PHP", "laravel", "yii2", "seffeng", "afs"],
+    "license": "MIT",
+    "homepage": "https://github.com/seffeng/php-afs",
+    "authors": [
+        {
+            "name": "seffeng",
+            "email": "save.zxf@gmail.com",
+            "homepage": "https://github.com/seffeng"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "guzzlehttp/guzzle": ">=6.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=9.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Seffeng\\Afs\\": "src/"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4" : {
+            "Seffeng\\Afs\\Tests\\" : "tests/"
+        }
+    },
+    "minimum-stability": "stable"
+}

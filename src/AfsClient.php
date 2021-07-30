@@ -134,6 +134,12 @@ class AfsClient
 
     /**
      *
+     * @var boolean
+     */
+    private $debug;
+
+    /**
+     *
      * @var integer
      */
     private $timeout = 30;
@@ -170,6 +176,9 @@ class AfsClient
     public function verify()
     {
         try {
+            if ($this->getDebug()) {
+                return true;
+            }
             $params = $this->getParams();
             $headers = $this->getHeaders();
             $query = array_merge($headers, $params);
@@ -743,5 +752,27 @@ class AfsClient
     public function getVersion()
     {
         return $this->version;
+    }
+
+    /**
+     *
+     * @author zxf
+     * @date   2021年7月30日
+     * @param bool $debug
+     */
+    public function setDebug(bool $debug)
+    {
+        $this->debug = $debug;
+    }
+
+    /**
+     *
+     * @author zxf
+     * @date   2021年7月30日
+     * @return boolean
+     */
+    public function getDebug()
+    {
+        return $this->debug === true;
     }
 }

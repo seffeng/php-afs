@@ -481,7 +481,7 @@ class AfsClient
      *
      * @author zxf
      * @date   2021年7月29日
-     * @param int $timeout
+     * @param integer $timeout
      * @return static
      */
     public function setTimeout(int $timeout)
@@ -720,7 +720,7 @@ class AfsClient
      *
      * @author zxf
      * @date   2021年7月29日
-     * @return number
+     * @return integer
      */
     public function getTimestamp()
     {

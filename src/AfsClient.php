@@ -8,7 +8,7 @@ namespace Seffeng\Afs;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\RequestException;
 use Seffeng\Afs\Exceptions\AfsException;
-use Seffeng\Afs\Helpers\ArrayHelper;
+use Seffeng\ArrHelper\Arr;
 
 class AfsClient
 {
@@ -192,12 +192,12 @@ class AfsClient
             if ($request->getStatusCode() === 200) {
                 $body = $request->getBody()->getContents();
                 $body = json_decode($body, true);
-                $errorCode = ArrayHelper::getValue($body, 'Code');
+                $errorCode = Arr::getValue($body, 'Code');
 
                 if ($errorCode && $errorCode === 100) {
                     return true;
                 } else {
-                    $message = ArrayHelper::getValue($body, 'Msg', '');
+                    $message = Arr::getValue($body, 'Msg', '');
                 }
             }
             throw new AfsException($message);

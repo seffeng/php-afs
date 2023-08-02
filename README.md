@@ -14,8 +14,6 @@ $ composer require seffeng/afs
 │  │  AfsClient.php
 │  ├─Exceptions
 │  │    AfsException.php
-│  └─Helpers
-│       ArrayHelper.php
 └─tests
     AfsTest.php
 ```
